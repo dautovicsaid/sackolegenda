@@ -31,3 +31,5 @@ Route::get('/deletePovez/{id}', [PovezController::class,'delete'] )->name("povez
 Route::get('/editPovez/{id}', [PovezController::class,'edit'])->name("povez.edit");
 
 Route::post('/updatePovez/{id}', [PovezController::class,'update'])->name("povez.update");
+
+Route::get('/settingsKategorije', [PovezController::class,'index'])->name("kategorije");
