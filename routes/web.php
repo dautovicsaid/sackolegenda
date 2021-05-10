@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PovezController;
 use App\Http\Controllers\KategorijeController;
 use App\Http\Controllers\FormatController;
-use App\Http\Controllers\BibliotekariController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,20 +71,3 @@ Route::get('/editFormat/{id}',[FormatController::class,'edit'])->name("format.ed
 Route::post('/updateFormat/{id}', [FormatController::class,'update'])->name("format.update");
 
 Route::get('/deleteFormat/{id}',[FormatController::class,'delete'])->name("format.delete");
-
-
-
-//biblitekari
-
-
-Route::get('/settingsBiblitokari',[BiblitokariController::class,'index'])->name("biblitekari");
-
-Route::get('/createBiblitokari',[BiblitokariController::class,'create'])->name("bibliotekari.create");
-
-Route::post('/storeBiblitokari',[BiblitokariController::class,'store'])->name("bibliotekari.store");
-
-Route::get('/editBiblitokari{id}',[BiblitokariController::class,'edit'])->name("bibliotekari.edit");
-
-Route::post('/updateBiblitokari/{id}', [BiblitokariController::class,'update'])->name("bibliotekari.update");
-
-Route::get('/deleteBiblitokari/{id}',[BiblitokariController::class,'delete'])->name("biblitekari.delete");
