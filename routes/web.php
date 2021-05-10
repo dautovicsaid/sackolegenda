@@ -92,3 +92,16 @@ Route::get('/infoUcenici/{id}',[UceniciController::class,'read'])->name("ucenici
 
 // Controleri i modeli i migration za Ucenici nisu uradjeni!!!
 
+Route::get('/Biblitekari',[BiblitekariController::class,'index'])->name("bibliotekari");
+
+Route::get('/createBiblitekari',[BiblitekariController::class,'create'])->name("bibliotekari.create");
+
+Route::post('/storeBiblitekari',[BiblitekariController::class,'store'])->name("bibliotekari.store");
+
+Route::get('/editBiblitekari/{id}',[BiblitekariController::class,'edit'])->name("bibliotekari.edit");
+
+Route::post('/updateBiblitekari/{id}', [BiblitekariController::class,'update'])->name("bibliotekari.update");
+
+Route::get('/deleteBiblitekari/{id}',[BiblitekariController::class,'delete'])->name("bibliotekari.delete");
+
+Route::get('/infoBiblitekari/{id}',[BiblitekariController::class,'read'])->name("bibliotekari.info");
