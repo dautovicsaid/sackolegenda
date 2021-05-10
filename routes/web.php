@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PovezController;
 use App\Http\Controllers\KategorijeController;
 use App\Http\Controllers\FormatController;
+use App\Http\Controllers\BibliotekariController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,23 @@ Route::get('/editFormat/{id}',[FormatController::class,'edit'])->name("format.ed
 Route::post('/updateFormat/{id}', [FormatController::class,'update'])->name("format.update");
 
 Route::get('/deleteFormat/{id}',[FormatController::class,'delete'])->name("format.delete");
+
+
+//Ucenici
+
+Route::get('/Ucenici',[UceniciController::class,'index'])->name("ucenici");
+
+Route::get('/createUcenici',[UceniciController::class,'create'])->name("ucenici.create");
+
+Route::post('/storeUcenici',[UceniciController::class,'store'])->name("ucenici.store");
+
+Route::get('/editUcenici/{id}',[UceniciController::class,'edit'])->name("ucenici.edit");
+
+Route::post('/updateUcenici/{id}', [UceniciController::class,'update'])->name("ucenici.update");
+
+Route::get('/deleteUcenici/{id}',[UceniciController::class,'delete'])->name("ucenici.delete");
+
+Route::get('/infoUcenici/{id}',[UceniciController::class,'read'])->name("ucenici.info");
+
+// Controleri i modeli i migration za Ucenici nisu uradjeni!!!
+
