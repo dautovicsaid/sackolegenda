@@ -16,7 +16,7 @@ class PovezController extends Controller
     }
     public function store(Request $request){
         $povez = new Povez();
-        $povez->naziv = $request->input('Naziv');
+        $povez->Naziv = $request->input('Naziv');
         $povez->save();
         return redirect('/settingsPovez');
     }
@@ -29,7 +29,7 @@ class PovezController extends Controller
     public function update($id, Request $request){
         $input = $request->all(); 
         $povez = Povez::find($id);
-        $povez->naziv = $input['naziv'];
+        $povez->Naziv = $input['Naziv'];
         $povez->save();
         return redirect('/settingsPovez');
 
