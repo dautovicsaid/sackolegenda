@@ -15,6 +15,8 @@ class KategorijeController extends Controller
         return view('kategorije.create');
     }
     public function store(Request $request){
+        
+    
         $kategorije = new Kategorije();
         $kategorije->naziv = $request->input('naziv');
         $kategorije->save();
@@ -38,6 +40,8 @@ class KategorijeController extends Controller
         $input = $request->all(); 
         $kategorije = Kategorije::find($id);
         $kategorije->naziv = $input['naziv'];
+        $kategorije->ikonica = $input['ikonica'];
+        $kategorije->opis = $input['opis'];
         $kategorije->save();
         return redirect('/settingsKategorije');
 
@@ -51,4 +55,4 @@ class KategorijeController extends Controller
             return redirect('/settingsKategorije');
     }  
 }
-}
+
