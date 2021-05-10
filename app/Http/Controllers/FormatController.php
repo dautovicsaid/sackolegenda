@@ -24,8 +24,7 @@ class FormatController extends Controller
         $format = new Format();
         $format->naziv = $request->input('Naziv');
         $format->save();
-
-        return redirect('/format');
+        return redirect('/settingsFormat');
     }
 
     public function edit($id){
@@ -42,13 +41,13 @@ class FormatController extends Controller
         $format->naziv = $input['Naziv'];
         $format->save();
 
-        return redirect('/format');
+        return redirect('/settingsFormat');
     }
 
     public function delete($id){
 
         $format = Format::find($id)->delete();
         
-        return redirect('/format');
+        return redirect('/settingsFormat');
     }
 }

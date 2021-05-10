@@ -15,9 +15,9 @@ class CreateKategorijesTable extends Migration
     {
         Schema::create('kategorijes', function (Blueprint $table) {
             $table->id();
-            $table->string('naziv');
-            $table->string('ikonica');
-            $table->string('opis', 2048);
+            $table->string('Naziv');
+            $table->string('Ikonica');
+            $table->string('Opis', 2048);
             $table->timestamps();
         });
     }

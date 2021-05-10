@@ -45,12 +45,13 @@
             
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form class="text-gray-700 forma">
+                <form form method="post" action="/storeFormat"class="text-gray-700 forma">
+                @csrf
                     <div class="flex flex-row ml-[30px]">
                         <div class="w-[50%] mb-[150px]">
                             <div class="mt-[20px]">
                                 <p>Naziv formata <span class="text-red-500">*</span></p>
-                                <input type="text" name="nazivFormat" id="nazivFormat" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" onkeydown="clearErrorsNazivFormat()"/>
+                                <input type="text" name="Naziv" id="nazivFormat" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" onkeydown="clearErrorsNazivFormat()"/>
                                 <div id="validateNazivFormat"></div>
                             </div>
                         </div>

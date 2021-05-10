@@ -64,7 +64,7 @@ Route::get('/settingsFormat',[FormatController::class,'index'])->name("format");
 
 Route::get('/createFormat',[FormatController::class,'create'])->name("format.create");
 
-Route::post('/saveFormat',[FormatController::class,'store'])->name("format.save");
+Route::post('/storeFormat',[FormatController::class,'store'])->name("format.store");
 
 Route::get('/editFormat/{id}',[FormatController::class,'edit'])->name("format.edit");
 
