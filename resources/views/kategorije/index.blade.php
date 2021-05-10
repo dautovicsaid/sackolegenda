@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 
+<!-- Content -->
 <section class="w-screen h-screen pl-[80px] py-4 text-gray-700">
             <!-- Heading of content -->
             <div class="heading mt-[7px]">

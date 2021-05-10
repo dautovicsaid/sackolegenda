@@ -3,23 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kategorije;
 
 class KategorijeController extends Controller
 {
     public function index(){
-        $povezi= Povez::all(); 
-        return view('povez.index', ['povezi'=>$povezi]);
+        $kategorije= Kategorije::all(); 
+        return view('kategorije.index', ['kategorije'=>$kategorije]);
     }
     public function create(){
-        return view('povez.create');
+        return view('kategorije.create');
     }
     public function store(Request $request){
-        $povez = new Povez();
-        $povez->naziv = $request->input('naziv');
-        $povez->save();
-        return redirect('/settingsPovez');
+        $kategorije = new Kategorije();
+        $kategorije->naziv = $request->input('naziv');
+        $kategorije->save();
+        return redirect('/settingsKategorije');
     }
     public function edit($id){
-        $povez = Povez::find($id);
-        return view('povez.edit', compact('povez'));
+        $kategorije = Kategorije::find($id);
+        return view('kategorije.edit', compact('kategorije'));
+    /*
+    $povez =Povez::all();
+    foreach($povez as $p) {
+        if($p->id==$id) {
+            $p->update();
+            return redirect('/settingsPovez');
+
+        }
+        */
+    }
+    
+    public function update($id, Request $request){
+        $input = $request->all(); 
+        $kategorije = Kategorije::find($id);
+        $kategorije->naziv = $input['naziv'];
+        $kategorije->save();
+        return redirect('/settingsKategorije');
+
+
+    }
+
+    
+        public function delete($id){
+            $kategorije = Kategorije::find($id)->delete();
+        
+            return redirect('/settingsKategorije');
+    }  
+}
 }

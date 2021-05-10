@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PovezController;
+use App\Http\Controllers\KategorijeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,14 @@ Route::get('/editPovez/{id}', [PovezController::class,'edit'])->name("povez.edit
 
 Route::post('/updatePovez/{id}', [PovezController::class,'update'])->name("povez.update");
 
-Route::get('/settingsKategorije', [PovezController::class,'index'])->name("kategorije");
+Route::get('/settingsKategorije', [KategorijeController::class,'index'])->name("kategorije");
+
+Route::get('/createKategorije', [KategorijeController::class,'create'])->name("kategorije.create");
+
+Route::post('/storeKategorije',[KategorijeController::class,'store'] )->name("kategorije.store");
+
+Route::get('/deleteKategorije/{id}', [KategorijeController::class,'delete'] )->name("kategorije.delete");
+
+Route::get('/editKategorije/{id}', [KategorijeController::class,'edit'])->name("kategorije.edit");
+
+Route::post('/updateKategorije/{id}', [KategorijeController::class,'update'])->name("kategorije.update");
