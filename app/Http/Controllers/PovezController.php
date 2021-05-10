@@ -16,22 +16,14 @@ class PovezController extends Controller
     }
     public function store(Request $request){
         $povez = new Povez();
-        $povez->naziv = $request->input('naziv');
+        $povez->naziv = $request->input('Naziv');
         $povez->save();
         return redirect('/settingsPovez');
     }
     public function edit($id){
         $povez = Povez::find($id);
         return view('povez.edit', compact('povez'));
-    /*
-    $povez =Povez::all();
-    foreach($povez as $p) {
-        if($p->id==$id) {
-            $p->update();
-            return redirect('/settingsPovez');
-
-        }
-        */
+    
     }
     
     public function update($id, Request $request){
