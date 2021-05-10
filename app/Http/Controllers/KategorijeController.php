@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategorije;
+use Image;
 
 class KategorijeController extends Controller
 {
@@ -19,8 +20,21 @@ class KategorijeController extends Controller
     
         $kategorije = new Kategorije();
         $kategorije->Naziv = $request->input('Naziv');
+    //file
 
-        
+        $request->validate([
+            'file' => 'required|mimes:png,jpg,svg|max:2048'
+        ]);
+    
+            
+        $fileName = time().'_'.$request->file->getClientOriginalName();
+        $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+    
+        $kategorije->Naziv = time().'_'.$request->file->getClientOriginalName();
+        $kategorije->Ikonica = '/storage/' . $filePath;
+            
+    //endoffile
+
 
 
         $kategorije->Opis = $request->input('Opis');
