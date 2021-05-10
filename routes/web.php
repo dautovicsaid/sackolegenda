@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('dashboard.index');
 })->name("dashboard");
 
-Route::get('/settings', function () {
-    return view('settings.index');
-})->name("settings");
+Route::get('/settings', function () {return view('settings.index');})->name("settings");
 
 Route::get('/settingsPovez', [PovezController::class,'index'])->name("povez");
 
