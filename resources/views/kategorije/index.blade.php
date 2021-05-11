@@ -73,7 +73,7 @@
                                     <p>{{$kategorija->Naziv}}</p>
                                 </td>
 
-                                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">"{{$kategorija->Opis}}"</td>
+                                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{$kategorija->Opis}}</td>
 
                                 <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 
