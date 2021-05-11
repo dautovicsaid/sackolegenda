@@ -22,7 +22,7 @@ class KategorijeController extends Controller
         $kategorije->Naziv = $request->input('Naziv');
     //file
 
-        $request->validate([
+        /*$request->validate([
             'file' => 'required|mimes:png,jpg,svg|max:2048'
         ]);
     
@@ -31,7 +31,7 @@ class KategorijeController extends Controller
         $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
     
         $kategorije->Naziv = time().'_'.$request->file->getClientOriginalName();
-        $kategorije->Ikonica = '/storage/' . $filePath;
+        $kategorije->Ikonica = '/storage/' . $filePath;*/
             
     //endoffile
 

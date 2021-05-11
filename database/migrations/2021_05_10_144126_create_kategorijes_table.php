@@ -17,7 +17,7 @@ class CreateKategorijesTable extends Migration
             $table->id();
             $table->string('Naziv');
             $table->string('Ikonica')->nullable();
-            $table->string('Opis', 2048)->nullable();
+            $table->string('Opis', 2048);
             $table->timestamps();
         });
     }

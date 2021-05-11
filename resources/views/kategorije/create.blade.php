@@ -45,13 +45,13 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form method="post" action="/storeKategorije" class="text-gray-700 forma" enctype="multipart/form-data">
+                <form method="post" action="/storeKategorije" class="text-gray-700 forma" >
                 @csrf
                     <div class="flex flex-row ml-[30px]">
                         <div class="w-[50%] mb-[100px]">
                             <div class="mt-[20px]">
                                 <p>Naziv kategorije <span class="text-red-500">*</span></p>
-                                <input type="text" name="naziv" id="nazivKategorije"
+                                <input type="text" name="Naziv" id="nazivKategorije"
                                     class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                                     onkeydown="clearErrorsNazivKategorije()" />
                                 <div id="validateNazivKategorije"></div>
@@ -74,7 +74,7 @@
 
                             <div class="mt-[20px]">
                                 <p class="inline-block">Opis</p>
-                                <textarea name="opisKategorije" rows="10"
+                                <textarea name="Opis" rows="10"
                                     class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]">
 
                                 </textarea>
