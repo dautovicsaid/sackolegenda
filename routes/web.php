@@ -5,6 +5,9 @@ use App\Http\Controllers\PovezController;
 use App\Http\Controllers\KategorijeController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\BibliotekariController;
+use App\Http\Controllers\UceniciController;
+use App\Http\Controllers\ZanroviController;
+use App\Http\Controllers\IzdavacController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +108,33 @@ Route::post('/updateBiblitekari/{id}', [BiblitekariController::class,'update'])-
 Route::get('/deleteBiblitekari/{id}',[BiblitekariController::class,'delete'])->name("bibliotekari.delete");
 
 Route::get('/infoBiblitekari/{id}',[BiblitekariController::class,'read'])->name("bibliotekari.info");
+
+//Zanrovi
+
+Route::get('/settingsZanrovi',[ZanroviController::class,'index'])->name("zanrovi");
+
+Route::get('/createZanrovi',[ZanroviController::class,'create'])->name("zanrovi.create");
+
+Route::post('/storeZanrovi',[ZanroviController::class,'store'])->name("zanrovi.store");
+
+Route::get('/editZanrovi/{id}',[ZanroviController::class,'edit'])->name("zanrovi.edit");
+
+Route::post('/updateZanrovi/{id}', [ZanroviController::class,'update'])->name("zanrovi.update");
+
+Route::get('/deleteZanrovi/{id}',[ZanroviController::class,'delete'])->name("zanrovi.delete");
+
+
+//Izdavac
+
+
+Route::get('/settingsIzdavac',[IzdavacController::class,'index'])->name("izdavac");
+
+Route::get('/createIzdavac',[IzdavacController::class,'create'])->name("izdavac.create");
+
+Route::post('/storeIzdavac',[IzdavacController::class,'store'])->name("izdavac.store");
+
+Route::get('/editIzdavac/{id}',[IzdavacController::class,'edit'])->name("izdavac.edit");
+
+Route::post('/updateIzdavac/{id}', [IzdavacController::class,'update'])->name("izdavac.update");
+
+Route::get('/deleteIzdavac/{id}',[IzdavacController::class,'delete'])->name("izdavac.delete");
