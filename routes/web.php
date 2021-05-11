@@ -5,9 +5,11 @@ use App\Http\Controllers\PovezController;
 use App\Http\Controllers\KategorijeController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\BibliotekariController;
-use App\Http\Controllers\UceniciController;
 use App\Http\Controllers\ZanroviController;
 use App\Http\Controllers\IzdavacController;
+use App\Http\Controllers\UcenikController;
+use App\Http\Controllers\KorisnikController;
+use App\Http\Controllers\TipkorisnikaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +81,7 @@ Route::get('/deleteFormat/{id}',[FormatController::class,'delete'])->name("forma
 
 //Ucenici
 
+/*
 Route::get('/Ucenici',[UceniciController::class,'index'])->name("ucenici");
 
 Route::get('/createUcenici',[UceniciController::class,'create'])->name("ucenici.create");
@@ -93,21 +96,25 @@ Route::get('/deleteUcenici/{id}',[UceniciController::class,'delete'])->name("uce
 
 Route::get('/infoUcenici/{id}',[UceniciController::class,'read'])->name("ucenici.info");
 
+
+
 // Controleri i modeli i migration za Ucenici nisu uradjeni!!!
 
-Route::get('/Biblitekari',[BiblitekariController::class,'index'])->name("bibliotekari");
+Route::get('/Bibliotekari',[BibliotekariController::class,'index'])->name("bibliotekari");
 
-Route::get('/createBiblitekari',[BiblitekariController::class,'create'])->name("bibliotekari.create");
+Route::get('/createBibliotekari',[BibliotekariController::class,'create'])->name("bibliotekari.create");
 
-Route::post('/storeBiblitekari',[BiblitekariController::class,'store'])->name("bibliotekari.store");
+Route::post('/storeBibliotekari',[BibliotekariController::class,'store'])->name("bibliotekari.store");
 
-Route::get('/editBiblitekari/{id}',[BiblitekariController::class,'edit'])->name("bibliotekari.edit");
+Route::get('/editBibliotekari/{id}',[BibliotekariController::class,'edit'])->name("bibliotekari.edit");
 
-Route::post('/updateBiblitekari/{id}', [BiblitekariController::class,'update'])->name("bibliotekari.update");
+Route::post('/updateBibliotekari/{id}', [BibliotekariController::class,'update'])->name("bibliotekari.update");
 
-Route::get('/deleteBiblitekari/{id}',[BiblitekariController::class,'delete'])->name("bibliotekari.delete");
+Route::get('/deleteBibliotekari/{id}',[BibliotekariController::class,'delete'])->name("bibliotekari.delete");
 
-Route::get('/infoBiblitekari/{id}',[BiblitekariController::class,'read'])->name("bibliotekari.info");
+Route::get('/infoBibliotekari/{id}',[BibliotekariController::class,'read'])->name("bibliotekari.info");
+
+*/
 
 //Zanrovi
 
@@ -138,3 +145,7 @@ Route::get('/editIzdavac/{id}',[IzdavacController::class,'edit'])->name("izdavac
 Route::post('/updateIzdavac/{id}', [IzdavacController::class,'update'])->name("izdavac.update");
 
 Route::get('/deleteIzdavac/{id}',[IzdavacController::class,'delete'])->name("izdavac.delete");
+
+//Ucenik
+
+Route::resource('ucenik',UcenikController::class);
