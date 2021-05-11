@@ -51,7 +51,7 @@ class UcenikController extends Controller
      */
     public function show(Korisnik $ucenik)
     {
-        $ucenik=Korisnik::findOrFail('id',$ucenik->id);
+        $ucenik=Korisnik::where('id',$ucenik->id)->first();
         return view('ucenik.show',['ucenik'=>$ucenik]);
     }
 
