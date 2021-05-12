@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
-     <!-- Content -->
-     <section class="w-screen h-screen py-4 pl-[80px] text-[#333333]">
+<!-- Content -->
+<section class="w-screen h-screen py-4 pl-[80px] text-[#333333]">
             <!-- Heading of content -->
             <div class="heading mt-[7px]">
                 <h1 class="pl-[30px] pb-[21px] border-b-[1px] border-[#e4dfdf] ">
@@ -10,18 +10,6 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-dashboard">
-            @if(@session('success'))
-            <div class="bg-blue-100 mssg border-t flex items-center border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                <p class="font-bold items-center">{{session('success')}}</p>
-               
-            </div>
-            @endif
-            @if(@session('fail'))
-            <div class="bg-blue-100 fail border-t flex items-center border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                <p class="font-bold items-center">{{session('fail')}}</p>
-               
-            </div>
-            @endif
                 <div class="flex items-center justify-between px-[30px] py-4 space-x-3 rounded-lg">
                     <a href="{{route('bibliotekar.create')}}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-plus mr-[15px]"></i> Novi bibliotekar  
@@ -80,7 +68,7 @@
                                 </td>
                                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{$b->Email}}
                                 </td>
-                                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{$b->tipkorisnika->Naziv}}</td>
+                                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{$b->Tipkorisnika->Naziv}}</td>
                                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">Prije 10 sati</td>
                                 <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsLibrarian hover:text-[#606FC7]">
@@ -97,13 +85,13 @@
                                                     <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">Pogledaj detalje</span>
                                                 </a>
-                                                <a href="{{route('bibliotekar.edit',$b->Id)}}" tabindex="0"
+                                                <a href="{{route('bibliotekar.edit',$b->id)}}" tabindex="0"
                                                     class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                     role="menuitem">
                                                     <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">Izmijeni korisnika</span>
                                                 </a>
-                                                <form method="post" action="{{route('bibliotekar.destroy',$b->Id)}}" tabindex="0"
+                                                <form method="post" action="{{route('bibliotekar.destroy',$b->id)}}" tabindex="0"
                                                     class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                     role="menuitem">
                                                     @csrf 
@@ -111,7 +99,7 @@
                                                     <button type="submit"><i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">Izbrisi korisnika</span>
                                                     </button>
-                                                </form>
+                                                </a>
                                                 <a href="#" tabindex="0"
                                                     class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                     role="menuitem">
@@ -123,7 +111,7 @@
                                     </div>
                                 </td>
                             </tr>
-                           @endforeach
+                            
                         </tbody>
                     </table>
 
@@ -192,5 +180,4 @@
             </div>
 
         </section>
-        <!-- End Content -->
-@endsection
+        @endsection

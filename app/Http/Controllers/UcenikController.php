@@ -64,11 +64,15 @@ class UcenikController extends Controller
      * @param  \App\Models\Ucenik  $ucenik
      * @return \Illuminate\Http\Response
      */
-    public function show(Korisnik $ucenik)
+    public function show(Korisnik $ucenik )
     {
-        $ucenik=Korisnik::where('id',$ucenik->id)->first();
-    
+         
+        $ucenik = Korisnik::find($ucenik->id);
         return view('ucenik.show',['u'=>$ucenik]);
+
+        // $ucenik=Korisnik::where('id',$ucenik->id)->first();
+    
+        // return view('ucenik.show',['u'=>$ucenik]);
     }
 
     /**
@@ -77,9 +81,12 @@ class UcenikController extends Controller
      * @param  \App\Models\Ucenik  $ucenik
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ucenik $ucenik)
+    public function edit(Korisnik $ucenik)
     {
-        //
+        $ucenik=Korisnik::where('id',$ucenik->id)->first();
+        $tip=Tipkorisnika::all();
+       //'t'=>$tip
+        return view('ucenik.edit',['u'=>$ucenik,'tip'=>$tip]);
     }
 
     /**
@@ -91,7 +98,15 @@ class UcenikController extends Controller
      */
     public function update(Request $request, Ucenik $ucenik)
     {
-        //
+        $ucenik=Korisnik::where('id',$ucenik->id)->first();
+        $ucenik->ImePrezime=$request->imePrezimeUcenikEdit;
+        $ucenik->JMBG=$request->jmbgUcenikEdit;
+        $ucenik->Email=$request->emailUcenikEdit;
+        $ucenik->KorisnickoIme=$request->usernameUcenikEdit;
+        $ucenik->Sifra=$request->pwUcenikEdit;
+        $ucenik->tipkorisnika_id=$request->tip_korisnika;
+        $ucenik=$ucenik->save(); 
+        return redirect()->route('ucenik.index');
     }
 
     /**
@@ -102,7 +117,8 @@ class UcenikController extends Controller
      */
     public function destroy(Ucenik $ucenik)
     {
-        $bibliotekar=Bibliotekar::where('Id',$bibliotekar->Id)->delete();
+        $ucenik=Ucenik::where('id',$ucenik->id)->delete();
+        return redirect()->route('ucenik.index');
     }
 }
 
