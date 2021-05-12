@@ -17,9 +17,22 @@ class KategorijeController extends Controller
     }
     public function store(Request $request){
         
-    
+        $request->validate([
+            'ikonica'=>'nullable|image|max:2048'
+        ]);
+
+        if($request->file('ikonica')){
+            $file = $request->file('ikonica');
+            $path = "storage/slika/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $file->storeAs("/public/slike/slike-kategorija" , $file->getClientOriginalName());
+        }
+
         $kategorije = new Kategorije();
         $kategorije->Naziv = $request->input('Naziv');
+        $kategorije->Ikonica = $path;
+        $kategorije->Opis = $request->input('Opis');
+        $kategorije->save();
+        return redirect('/settingsKategorije');
     //file
 
         /*$request->validate([
@@ -37,9 +50,6 @@ class KategorijeController extends Controller
 
 
 
-        $kategorije->Opis = $request->input('Opis');
-        $kategorije->save();
-        return redirect('/settingsKategorije');
     }
     public function edit($id){
         $kategorije = Kategorije::find($id);

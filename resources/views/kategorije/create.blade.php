@@ -45,8 +45,9 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form method="post" action="/storeKategorije" class="text-gray-700 forma" >
+                <form method="post" action="/storeKategorije" class="text-gray-700 forma" enctype="multipart/form-data">
                 @csrf
+                @method('POST')
                     <div class="flex flex-row ml-[30px]">
                         <div class="w-[50%] mb-[100px]">
                             <div class="mt-[20px]">
@@ -64,7 +65,7 @@
                                     <div class="bg-gray-300 h-[40px] w-[102px] px-[20px] pt-[10px]">
                                         <label class="cursor-pointer">
                                             <p class="leading-normal">Browse...</p>
-                                            <input id="icon-upload" type='file' name="file" class="hidden" :multiple="multiple"
+                                            <input id="icon-upload" name="ikonica" type='file' name="file" class="hidden" 
                                                 :accept="accept" />
                                         </label>
                                     </div>
