@@ -209,7 +209,7 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="bibliotekari.php" aria-label="Bibliotekari">
+                                <a href="{{route('bibliotekar.index')}}" aria-label="Bibliotekari">
                                     <i
                                         class="text-[25px] text-[#707070] far fa-address-book transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <div class="hidden sidebar-item">
@@ -228,7 +228,7 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="ucenik.php" aria-label="Ucenici">
+                                <a href="{{route('ucenik.index')}}" aria-label="Ucenici">
                                     <i
                                         class="text-[18px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] fas fa-users"></i>
                                     <div class="hidden sidebar-item">

@@ -10,14 +10,14 @@
                     <div class="pl-[30px] py-[10px] flex flex-col">
                         <div>
                             <h1>
-                                Pero Perovic
+                            {{$u->ImePrezime}}
                             </h1>
                         </div>
                         <div>
                             <nav class="w-full rounded">
                                 <ol class="flex list-reset">
                                     <li>
-                                        <a href="ucenik.php" class="text-[#2196f3] hover:text-blue-600">
+                                        <a href="{{route('ucenik.index')}}" class="text-[#2196f3] hover:text-blue-600">
                                             Svi ucenici
                                         </a>
                                     </li>
@@ -25,8 +25,8 @@
                                         <span class="mx-2">/</span>
                                     </li>
                                     <li>
-                                        <a href="ucenikProfile.php" class="text-[#2196f3] hover:text-blue-600">
-                                            ID-354
+                                        <a href="{{route('ucenik.edit',$u->id)}}" class="text-[#2196f3] hover:text-blue-600">
+                                        ID-{{$u->id}}
                                         </a>
                                     </li>
                                 </ol>
@@ -38,7 +38,7 @@
                             <i class="fas fa-redo-alt mr-[3px]"></i>
                             Resetuj sifru
                         </a>
-                        <a href="editUcenik.php" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                        <a href="{{route('ucenik.edit',$u->id)}}" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
                             <i class="fas fa-edit mr-[3px] "></i>
                             Izmjeni podatke
                         </a>
@@ -51,12 +51,14 @@
                             <div class="absolute right-0 w-56 mt-[10px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                                 aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                                 <div class="py-1">
-                                    <a href="#" tabindex="0"
+                                <form action="{{route('ucenik.destroy',$u->id)}}" tabindex="0" method="post"
                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                         role="menuitem">
-                                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Izbrisi korisnika</span>
-                                    </a>
+                                        @csrf 
+                                        @method('DELETE')
+                                        <button type="submit"><i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Izbrisi korisnika</span></button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -78,23 +80,23 @@
                         <div class="mr-[30px]">
                             <div class="mt-[20px]">
                                 <span class="text-gray-500">Ime i prezime</span>
-                                <p class="font-medium">Pero Perovic</p>
+                                <p class="font-medium">{{$u->ImePrezime}}</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Tip korisnika</span>
-                                <p class="font-medium">Ucenik</p>
+                                <p class="font-medium">{{$u->tipkorisnika->Naziv}}</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">JMBG</span>
-                                <p class="font-medium">1345687815462</p>
+                                <p class="font-medium">{{$u->JMBG}}</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Email</span>
-                                <a href="#" class="block font-medium text-[#2196f3]">pero.perovic@domain.net</a>
+                                <a href="#" class="block font-medium text-[#2196f3]">{{$u->Email}}</a>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Korisnicko ime</span>
-                                <p class="font-medium">pero.perovic</p>
+                                <p class="font-medium">{{$u->KorisnickoIme}}</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Broj logovanja</span>

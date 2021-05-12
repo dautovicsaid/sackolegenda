@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PovezController;
 use App\Http\Controllers\KategorijeController;
 use App\Http\Controllers\FormatController;
-use App\Http\Controllers\BibliotekariController;
-use App\Http\Controllers\UceniciController;
+use App\Http\Controllers\KorisnikController;
+use App\Http\Controllers\BibliotekarController;
+use App\Http\Controllers\TipkorisnikaController;
+use App\Http\Controllers\UcenikController;
 use App\Http\Controllers\ZanroviController;
 use App\Http\Controllers\IzdavacController;
 
@@ -79,6 +81,8 @@ Route::get('/deleteFormat/{id}',[FormatController::class,'delete'])->name("forma
 
 //Ucenici
 
+/*
+
 Route::get('/Ucenici',[UceniciController::class,'index'])->name("ucenici");
 
 Route::get('/createUcenici',[UceniciController::class,'create'])->name("ucenici.create");
@@ -109,6 +113,8 @@ Route::get('/deleteBiblitekari/{id}',[BiblitekariController::class,'delete'])->n
 
 Route::get('/infoBiblitekari/{id}',[BiblitekariController::class,'read'])->name("bibliotekari.info");
 
+*/
+
 //Zanrovi
 
 Route::get('/settingsZanrovi',[ZanroviController::class,'index'])->name("zanrovi");
@@ -138,3 +144,11 @@ Route::get('/editIzdavac/{id}',[IzdavacController::class,'edit'])->name("izdavac
 Route::post('/updateIzdavac/{id}', [IzdavacController::class,'update'])->name("izdavac.update");
 
 Route::get('/deleteIzdavac/{id}',[IzdavacController::class,'delete'])->name("izdavac.delete");
+
+//Ucenik
+
+Route::resource('ucenik',UcenikController::class);
+
+//Bibliotekar
+
+Route::resource('bibliotekar',BibliotekarController::class);
