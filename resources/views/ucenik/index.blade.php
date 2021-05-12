@@ -11,7 +11,7 @@
             <!-- Space for content -->
             <div class="scroll height-dashboard">
                 <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
-                    <a href="noviUcenik.php" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
+                    <a href="{{route('ucenik.create')}}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-plus mr-[15px]"></i> Novi ucenik  
                     </a>
                     <div class="flex items-center">
@@ -52,7 +52,7 @@
                                 </td>
                                 <td class="flex flex-row items-center px-4 py-4">
                                     <img class="object-cover w-8 h-8 mr-2 rounded-full" src="img/profileStudent.jpg" alt=""/>
-                                    <a href="ucenikProfile.php">
+                                    <a href="{{route('ucenik.show',$u->id)}}">
                                         <span class="font-medium text-center">{{$u->ImePrezime}}</span>
                                     </a>
                                 </td>
