@@ -10,14 +10,14 @@
                     <div class="pl-[30px] py-[10px] flex flex-col">
                         <div>
                             <h1>
-                                {{$ucenik->ImePrezime}}
+                                Pero Perovic
                             </h1>
                         </div>
                         <div>
                             <nav class="w-full rounded">
                                 <ol class="flex list-reset">
                                     <li>
-                                        <a href="{{route(ucenik.index)}}" class="text-[#2196f3] hover:text-blue-600">
+                                        <a href="ucenik.php" class="text-[#2196f3] hover:text-blue-600">
                                             Svi ucenici
                                         </a>
                                     </li>
@@ -26,7 +26,7 @@
                                     </li>
                                     <li>
                                         <a href="ucenikProfile.php" class="text-[#2196f3] hover:text-blue-600">
-                                        {{$ucenik->Id}}
+                                            ID-354
                                         </a>
                                     </li>
                                 </ol>
@@ -38,7 +38,7 @@
                             <i class="fas fa-redo-alt mr-[3px]"></i>
                             Resetuj sifru
                         </a>
-                        <a href="{{route(ucenik.edit,$ucenik->id)}}" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                        <a href="editUcenik.php" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
                             <i class="fas fa-edit mr-[3px] "></i>
                             Izmjeni podatke
                         </a>
@@ -78,23 +78,23 @@
                         <div class="mr-[30px]">
                             <div class="mt-[20px]">
                                 <span class="text-gray-500">Ime i prezime</span>
-                                <p class="font-medium">{{$ucenik->ImePrezime}}</p>
+                                <p class="font-medium">Pero Perovic</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Tip korisnika</span>
-                                <p class="font-medium">{{$ucenik->tipkorisnika->Naziv}}</p>
+                                <p class="font-medium">Ucenik</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">JMBG</span>
-                                <p class="font-medium">{{$ucenik->JMBG}}</p>
+                                <p class="font-medium">1345687815462</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Email</span>
-                                <a href="#" class="block font-medium text-[#2196f3]">{{$ucenik->Email}}</a>
+                                <a href="#" class="block font-medium text-[#2196f3]">pero.perovic@domain.net</a>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Korisnicko ime</span>
-                                <p class="font-medium">{{$ucenik->KorisnickoIme}}</p>
+                                <p class="font-medium">pero.perovic</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500">Broj logovanja</span>
