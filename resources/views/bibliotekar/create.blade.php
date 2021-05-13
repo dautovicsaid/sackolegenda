@@ -57,7 +57,7 @@
                                     @endforeach
                                 </select>
                                 <div class="fail" id="validateNameBibliotekarEdit">
-                                @error('tip_korisnika')@php echo "Tip korisnika je obavezno polje"; @endphp @enderror
+                              
                              
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <input type="text" name="jmbgBibliotekar" id="jmbgBibliotekar" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" />
                                 
                                 <div class="fail" id="validateJmbgBibliotekar">
-                                @error('jmbgBibliotekar')@php echo "JMBG bibliotekara je obavezno polje"; @endphp @enderror
+                          
                              
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                 <span>E-mail <span class="text-red-500">*</span></span>
                                 <input type="email" name="emailBibliotekar" id="emailBibliotekar" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" />
                                 <div class="fail" id="validateEmailBibliotekar">
-                                @error('emailBibliotekar')@php echo "Email bibliotekara je obavezno polje"; @endphp @enderror
+                                
                              
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                 <span>Ponovi sifru <span class="text-red-500">*</span></span>
                                 <input type="password" name="pw2Bibliotekar" id="pw2Bibliotekar" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]" />
                                 <div class="fail" id="validatePw2Bibliotekar">
-                                @error('pw2Bibliotekar')@php echo "Ponivljena sifra bibliotekara je obavezno polje i mora da se poklapa sa prvom"; @endphp @enderror
+                               
                              
                                 </div>
                             </div>
@@ -145,5 +145,5 @@
                 </form>
             </div>
         </section>
-        <!-- End Content onclick="validacijaBibliotekar()" onkeydown="clearErrorsPwBibliotekar()"-->
+        <!-- End Content 
 @endsection

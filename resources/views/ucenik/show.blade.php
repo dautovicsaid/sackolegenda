@@ -109,7 +109,7 @@
 
                         </div>
                         <div class="ml-[100px]  mt-[20px]">
-                            <img class="p-2 border-2 border-gray-300" width="300px" src="img/profileStudent.jpg" alt="">
+                            <img class="p-2 border-2 border-gray-300" width="300px" src="{{$u->Foto}}" alt="">
                         </div>
                     </div>
                 </div>
