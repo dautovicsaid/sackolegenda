@@ -63,7 +63,7 @@ class UcenikController extends Controller
 
         if($request->file('foto')){
             $file = $request->file('foto');
-            $path = "/storage/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $path = "/storage/public/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
             $file->storeAs("/public/slikeKorisnici/slike-kategorija" , $file->getClientOriginalName());
             $ucenik->Foto=$path;
         }
