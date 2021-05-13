@@ -58,11 +58,23 @@ class KategorijeController extends Controller
     }
     
     public function update($id, Request $request){
-        $input = $request->all(); 
-        $kategorije = Kategorije::find($id);
-        $kategorije->Naziv = $input['Naziv'];
+
+        $kategorije = Kategorije::where('id' , $id)->first();
+        $request->validate([
+            'ikonica'=>'nullable|image|max:2048'
+        ]);
+
+        if($request->file('ikonica')){
+            $file = $request->file('ikonica');
+            $newpath = "storage/slika/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $file->storeAs("/public/slike/slike-kategorija" , $file->getClientOriginalName());
+        }
+
         
+        $input = $request->all();     
+        $kategorije->Naziv = $input['Naziv'];       
         $kategorije->Opis = $input['Opis'];
+        $kategorije->Ikonica = $newpath;
         $kategorije->save();
         return redirect('/settingsKategorije');
 
