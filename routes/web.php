@@ -10,6 +10,8 @@ use App\Http\Controllers\TipkorisnikaController;
 use App\Http\Controllers\UcenikController;
 use App\Http\Controllers\ZanroviController;
 use App\Http\Controllers\IzdavacController;
+use App\Http\Controllers\PismoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -152,3 +154,7 @@ Route::resource('ucenik',UcenikController::class);
 //Bibliotekar
 
 Route::resource('bibliotekar',BibliotekarController::class);
+
+//Pismo
+
+Route::resource('pismo',PismoController::class);
