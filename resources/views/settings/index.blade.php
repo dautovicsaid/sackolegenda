@@ -31,7 +31,7 @@
                 <a href="settingsFormat" class="inline ml-[70px] hover:text-blue-800">
                     Format
                 </a>
-                <a href="settingsPismo" class="inline ml-[70px] hover:text-blue-800">
+                <a href="/pismo" class="inline ml-[70px] hover:text-blue-800">
                     Pismo
                 </a>
             </div>
