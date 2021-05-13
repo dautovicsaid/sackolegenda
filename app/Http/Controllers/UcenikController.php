@@ -54,23 +54,23 @@ class UcenikController extends Controller
         $ucenik->KorisnickoIme=$request->usernameUcenik;
         $ucenik->Sifra=$request->pwUcenik;
         $ucenik->tipkorisnika_id=$request->tip_korisnika;
-        $ucenik=$ucenik->save(); 
+        
 
         //slika
-        $request->validate([
+        /*$request->validate([
             'foto'=>'nullable|image|max:2048'
-        ]);
+        ]);*/
 
         if($request->file('foto')){
             $file = $request->file('foto');
-            $path = "storage/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $path = "/storage/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
             $file->storeAs("/public/slikeKorisnici/slike-kategorija" , $file->getClientOriginalName());
             $ucenik->Foto=$path;
         }
         
 
 
-
+        $ucenik->save(); 
 
         return redirect()->route('ucenik.index');
     }
@@ -124,20 +124,21 @@ class UcenikController extends Controller
         $ucenik->tipkorisnika_id=$request->tip_korisnika;
 
         //slika
-        $request->validate([
+        /*$request->validate([
             'foto'=>'nullable|image|max:2048'
-        ]);
+        ]);*/
 
         if($request->file('foto')){
             $file = $request->file('foto');
             $newpath = "storage/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
             $file->storeAs("/public/slikeKorisnici/slike-kategorija" , $file->getClientOriginalName());
+            $ucenik->Foto=$newpath;
         }
-        $ucenik->Foto=$newpath;
+        
 
 
 
-        $ucenik=$ucenik->save(); 
+        $ucenik->save(); 
         return redirect()->route('ucenik.index');
     }
 

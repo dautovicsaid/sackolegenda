@@ -36,8 +36,9 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form method="post" action="{{route('ucenik.store')}}" class="text-gray-700 text-[14px] forma">
+                <form method="post" action="{{route('ucenik.store')}}" class="text-gray-700 text-[14px] forma" enctype="multipart/form-data">
                 @csrf
+                @method('POST')
                     <div class="flex flex-row ml-[30px]">
                         <div class="w-[50%] mb-[100px]">
                             <div class="mt-[20px]">
@@ -102,7 +103,7 @@
                                             <polyline points="21 15 16 10 5 21"></polyline>
                                         </svg>
                                         <span class="px-4 py-2 mt-2 leading-normal">Add photo</span>
-                                        <input type='file' class="hidden" :accept="accept" onchange="loadFileStudent(event)" />
+                                        <input type='file' class="hidden" :accept="accept" name="foto" onchange="loadFileStudent(event)" />
                                     </div>
                                     <img id="image-output-student" class="hidden absolute w-48 h-[188px] bottom-0" />	
                                 </div>

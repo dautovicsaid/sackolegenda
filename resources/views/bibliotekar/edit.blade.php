@@ -36,7 +36,7 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form action="{{route('bibliotekar.update',$b->id)}}" method="post" class="text-gray-700 text-[14px] forma">
+                <form action="{{route('bibliotekar.update',$b->id)}}" method="post" class="text-gray-700 text-[14px] forma" enctype="multipart/form-data">
                 @csrf 
                 @method('PUT')
                     <div class="flex flex-row ml-[30px]">
@@ -50,11 +50,16 @@
                             <div class="mt-[20px]">
                                 <span>Tip korisnika</span>
                                 <select class="flex w-[90%] mt-2 px-2 py-2 border bg-gray-300 border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#576cdf]" name="tip_korisnika" >
-                                @foreach($tip as $t)
+                                <!--@foreach($tip as $t)
                                     <option value="{{$t->id}}">
                                      {{$t->Naziv}}  
                                     </option>
-                                   @endforeach
+                                   @endforeach-->
+
+                                   <option value="1"> 
+                                        bibliotekar
+                                    </option>
+
                                 </select>
                             </div>
 
@@ -99,7 +104,7 @@
                                             <polyline points="21 15 16 10 5 21"></polyline>
                                         </svg>
                                         <span class="px-4 py-2 mt-2 leading-normal">Add photo</span>
-                                        <input type='file' class="hidden" :accept="accept" onchange="loadFileLibrarian(event)" />
+                                        <input type='file' class="hidden" :accept="accept" name="foto" onchange="loadFileLibrarian(event)" />
                                     </div>
                                     <img src="img/profileExample.jpg" id="image-output-librarian" class="absolute w-48 h-[188px] bottom-0" />	
                                 </div>

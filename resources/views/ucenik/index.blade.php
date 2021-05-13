@@ -51,7 +51,12 @@
                                     </label>
                                 </td>
                                 <td class="flex flex-row items-center px-4 py-4">
-                                    <img class="object-cover w-8 h-8 mr-2 rounded-full" src="/img/profileStudent.jpg" alt=""/>
+                                    <img class="object-cover w-8 h-8 mr-2 rounded-full" src="<?php if($u->Foto){
+                                        echo $u->Foto;
+                                    }else{
+                                        echo "/img/profileStudent.jpg";
+                                    }?>"
+                                     alt=""/>
                                     <a href="{{route('ucenik.show',$u->id)}}">
                                         <span class="font-medium text-center">{{$u->ImePrezime}}</span>
                                     </a>

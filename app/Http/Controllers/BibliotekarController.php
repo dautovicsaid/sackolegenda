@@ -49,7 +49,21 @@ class BibliotekarController extends Controller
         $bibliotekar->KorisnickoIme=$request->usernameBibliotekar;
         $bibliotekar->Sifra=$request->pwBibliotekar;
         $bibliotekar->tipkorisnika_id=$request->tip_korisnika;
-        $bibliotekar=$bibliotekar->save();
+
+        //slika
+        $request->validate([
+            'foto'=>'nullable|image|max:2048'
+        ]);
+
+        if($request->file('foto')){
+            $file = $request->file('foto');
+            $path = "storage/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $file->storeAs("/public/slikeKorisnici/slike-kategorija" , $file->getClientOriginalName());
+            $bibliotekar->Foto=$path;
+        }
+        
+
+        $bibliotekar->save();
         return redirect()->route('bibliotekar.index');
 
     
@@ -99,7 +113,22 @@ class BibliotekarController extends Controller
             $bibliotekar->KorisnickoIme=$request->usernameBibliotekarEdit;
             $bibliotekar->Sifra=$request->pwBibliotekarEdit;
             $bibliotekar->tipkorisnika_id=$request->tip_korisnika;
-            $bibliotekar=$bibliotekar->save();
+
+            //files
+    
+        $request->validate([
+            'foto'=>'nullable|image|max:2048'
+        ]);
+
+        if($request->file('foto')){
+            $file = $request->file('foto');
+            $newpath = "/storage/public/slikeKorisnici/slike-kategorija/{$file->getClientOriginalName()}" ;
+            $file->storeAs("/public/slikeKorisnici/slike-kategorija" , $file->getClientOriginalName());
+            $bibliotekar->Foto=$newpath;
+        }
+        
+
+            $bibliotekar->save();
             return redirect()->route('bibliotekar.index');
     
     }
