@@ -45,7 +45,7 @@
             </div>
             <!-- Space for content -->
             <div class="scroll height-content section-content">
-                <form method="post" action="/storeKategorije" class="text-gray-700 forma" enctype="multipart/form-data">
+                <form method="post" action="/storeKategorije" class="text-gray-700 forma" enctype="multipart/form-data" >
                 @csrf
                 @method('POST')
                     <div class="flex flex-row ml-[30px]">
