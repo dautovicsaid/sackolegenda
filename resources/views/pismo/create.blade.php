@@ -24,7 +24,7 @@
                                 <span class="mx-2">/</span>
                             </li>
                             <li>
-                                <a href="/settingsPismo" class="text-[#2196f3] hover:text-blue-600">
+                                <a href="/pismo" class="text-[#2196f3] hover:text-blue-600">
                                     Pisma
                                 </a>
                             </li>
