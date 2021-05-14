@@ -68,13 +68,14 @@ class KategorijeController extends Controller
             $file = $request->file('ikonica');
             $newpath = "storage/slika/slike-kategorija/{$file->getClientOriginalName()}" ;
             $file->storeAs("/public/slike/slike-kategorija" , $file->getClientOriginalName());
+            $kategorije->Ikonica = $newpath;
         }
 
         
         $input = $request->all();     
         $kategorije->Naziv = $input['Naziv'];       
         $kategorije->Opis = $input['Opis'];
-        $kategorije->Ikonica = $newpath;
+        
         $kategorije->save();
         return redirect('/settingsKategorije');
 
